@@ -5,3 +5,4 @@
   * Determinar el numero de switches por edificio
   * Agregar los edificios que faltan a la topologia
   * Opcional: modificar la topologia fisica
+  * Agregar los scripts de instalacion para cada dispositivo
