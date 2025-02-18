@@ -1,0 +1,12 @@
+!CONFIGURACION DEL {nombre de host}
+enable
+configure terminal
+hostname {nombre de host}
+enable secret class
+banner motd #{Mensaje default}#
+service password-encryption
+line console 0
+line vty 0 4
+password cisco
+login
+exit
