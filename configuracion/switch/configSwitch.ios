@@ -8,12 +8,13 @@ service password-encryption
 line console 0
 password cisco
 login
-line vty 0 4
+line vty 0 15
 password cisco
 login
+!
 interface vlan 1
-ip address subred mascara
+ip address {subred} {mascara}
 no shutdown
-ip default-gateway ipDelGateWay
+ip default-gateway {ipDelGateWay}
 copy run start
 exit
