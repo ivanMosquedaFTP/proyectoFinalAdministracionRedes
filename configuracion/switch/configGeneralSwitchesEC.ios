@@ -1,0 +1,58 @@
+!CONFIGURACION DE SWITCHES EN EDIFICIO CENTRAL
+enable
+configure terminal
+hostname EC-TI-SW1
+enable secret class
+banner motd #Authorized access only, please contact your TI specialist#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+
+!VLAN 3: administrativos
+interace vlan 3
+ip address 192.168.44.1 255.255.255.128
+no shutdown
+ip default-gateway 192.168.44.127
+
+!VLAN 4: directivos
+interace vlan 4
+ip address 192.168.46.129 255.255.255.224
+no shutdown
+ip default-gateway 192.168.46.159
+
+!VLAN 5: tecnicos
+interace vlan 5
+ip address 192.168.46.129 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.159
+
+!VLAN 6: estudiantes
+interace vlan 6
+ip address 192.168.0.1 255.255.224.0
+no shutdown
+ip default-gateway 192.168.31.255
+
+!VLAN 7: servidores
+interace vlan 7
+ip address 192.168.44.129 255.255.255.192
+no shutdown
+ip default-gateway 192.168.44.191
+
+!VLAN 8: profesores
+interace vlan 8
+ip address 192.168.32.1 255.255.252.0
+no shutdown
+ip default-gateway 192.168.46.159
+
+!VLAN 9: Admin-ti
+interace vlan 9
+ip address 192.168.43.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.255
+
+copy running-config startup-config
+exit
