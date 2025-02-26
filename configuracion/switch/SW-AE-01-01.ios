@@ -1,0 +1,66 @@
+!CONFIGURACION DE SW-AE-01-01
+!nomenclatura sw-edificio-piso-dispositivo
+
+enable
+configure terminal
+hostname SW-AE-01-01
+enable secret class
+banner motd #Authorized access only, please contact your TI specialist#
+service password-encryption
+ip address 192.168.48.129
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+exit
+
+!VLAN 23: jefatura-ae
+vlan 23
+name jefatura-ae
+exit
+interface vlan 23
+ip address 192.168.47.161 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.191
+interface range f0/1-8
+switchport mode access
+switchport access vlan 23
+no shutdown
+exit
+
+!VLAN 24: administrativos-ae
+vlan 24
+name administrativos-ae
+exit
+interface vlan 24
+ip address 192.168.46.161 255.255.255.224
+no shutdown
+ip default-gateway 192.168.46.191
+interface range f0/9-15
+switchport mode access
+switchport access vlan 24
+no shutdown
+exit
+
+!VLAN 9: Admin-ti
+vlan 9
+name admin-ti
+exit
+interface vlan 9
+ip address 192.168.43.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.255
+interface range f0/16-24
+switchport mode access
+switchport access vlan 9
+no shutdown
+
+!CONFIGURACION DE LAS INTERFACES TRONCALES
+interface range g0/1-2
+switchport mode trunk
+no shutdown
+
+copy running-config startup-config
+end
