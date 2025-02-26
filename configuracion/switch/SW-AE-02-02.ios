@@ -1,0 +1,65 @@
+!CONFIGURACION DE SW-AE-02-02
+!nomenclatura sw-edificio-piso-dispositivo
+
+enable
+configure terminal
+hostname SW-AE-02-02
+enable secret class
+banner motd #Authorized access only, please contact your TI specialist#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+exit
+
+!VLAN 21: laboratorios-ae
+vlan 21
+name laboratorios-ae
+exit
+interface vlan 21
+ip address 192.168.36.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.36.255
+interface range f0/1-8
+switchport mode access
+switchport access vlan 21
+no shutdown
+exit
+
+!VLAN 22: camaras-ae
+vlan 22
+name camaras-ae
+exit
+interface vlan 22
+ip address 192.168.44.193 255.255.255.192
+no shutdown
+ip default-gateway 192.168.44.255
+interface range f0/9-15
+switchport mode access
+switchport access vlan 22
+no shutdown
+exit
+
+!VLAN 9: Admin-ti
+vlan 9
+name admin-ti
+exit
+interface vlan 9
+ip address 192.168.43.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.255
+interface range f0/16-24
+switchport mode access
+switchport access vlan 9
+no shutdown
+
+!CONFIGURACION DE LAS INTERFACES TRONCALES
+interface range g0/1-2
+switchport mode trunk
+no shutdown
+
+copy running-config startup-config
+end
