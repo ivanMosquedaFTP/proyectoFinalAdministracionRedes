@@ -13,16 +13,50 @@ password cisco
 login
 !
 !Configuración de VLANs
+!VLAN 41: Laboratorios-IB
 vlan 41
 name Laboratorios-IB
+exit
+interface vlan 41
+ip address 192.168.38.3 255.255.255.0
+no shutdown
+ip default-gateway 192.168.38.254
+!
+!VLAN 42: Cámaras-IB
 vlan 42
 name Camaras-IB
+exit
+interface vlan 42
+ip address 192.168.45.67 255.255.255.192
+no shutdown
+ip default-gateway 192.168.45.126
+!
+!VLAN 43: Jefatura-IB
 vlan 43
 name Jefatura-IB
+exit
+interface vlan 43
+ip address 192.168.47.227 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.254
+!
+!VLAN 44: Administrativos-IB
 vlan 44
 name Administrativos-IB
+exit
+interface vlan 44
+ip address 192.168.46.227 255.255.255.224
+no shutdown
+ip default-gateway 192.168.46.254
+!
+!VLAN 9: AdminTI
 vlan 9
 name AdminTI
+exit
+interface vlan 9
+ip address 192.168.43.15 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.254
 !
 !Configuración de interfaces para VLAN 41 (Laboratorios)
 interface range fa0/1-8

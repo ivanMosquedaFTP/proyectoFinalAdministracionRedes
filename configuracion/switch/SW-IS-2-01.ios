@@ -1,7 +1,7 @@
-!CONFIGURACION DE SW-IS-1-02
+!CONFIGURACION DE SW-IS-2-01
 enable
 configure terminal
-hostname SW-IS-1-02
+hostname SW-IS-2-01
 enable secret class
 banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE INGENIERIA EN SISTEMAS#
 service password-encryption
@@ -13,16 +13,50 @@ password cisco
 login
 !
 !Configuración de VLANs
+!VLAN 81: Laboratorios-IS
 vlan 81
 name Laboratorios-IS
+exit
+interface vlan 81
+ip address 192.168.42.3 255.255.255.0
+no shutdown
+ip default-gateway 192.168.42.254
+!
+!VLAN 82: Cámaras-IS
 vlan 82
 name Camaras-IS
+exit
+interface vlan 82
+ip address 192.168.46.67 255.255.255.192
+no shutdown
+ip default-gateway 192.168.46.126
+!
+!VLAN 83: Jefatura-IS
 vlan 83
 name Jefatura-IS
+exit
+interface vlan 83
+ip address 192.168.48.99 255.255.255.224
+no shutdown
+ip default-gateway 192.168.48.126
+!
+!VLAN 84: Administrativos-IS
 vlan 84
 name Administrativos-IS
+exit
+interface vlan 84
+ip address 192.168.47.99 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.126
+!
+!VLAN 9: AdminTI
 vlan 9
 name AdminTI
+exit
+interface vlan 9
+ip address 192.168.43.3 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.254
 !
 !Configuración de interfaces para VLAN 81 (Laboratorios)
 interface range fa0/1-8
@@ -50,7 +84,7 @@ no shutdown
 !
 !Configuración de administración
 interface vlan 1
-ip address 192.168.49.66 255.255.255.224
+ip address 192.168.49.67 255.255.255.224
 no shutdown
 !
 !Guardar configuración

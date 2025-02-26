@@ -1,7 +1,7 @@
-!CONFIGURACION DE SW-IQ-2-02
+!CONFIGURACION DE SW-IQ-1-01
 enable
 configure terminal
-hostname SW-IQ-2-02
+hostname SW-IQ-1-01
 enable secret class
 banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE INGENIERIA QUIMICA#
 service password-encryption
@@ -13,16 +13,50 @@ password cisco
 login
 !
 !Configuración de VLANs
+!VLAN 71: Laboratorios-IQ
 vlan 71
 name Laboratorios-IQ
+exit
+interface vlan 71
+ip address 192.168.41.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.41.254
+!
+!VLAN 72: Cámaras-IQ
 vlan 72
 name Camaras-IQ
+exit
+interface vlan 72
+ip address 192.168.46.1 255.255.255.192
+no shutdown
+ip default-gateway 192.168.46.62
+!
+!VLAN 73: Jefatura-IQ
 vlan 73
 name Jefatura-IQ
+exit
+interface vlan 73
+ip address 192.168.48.65 255.255.255.224
+no shutdown
+ip default-gateway 192.168.48.94
+!
+!VLAN 74: Administrativos-IQ
 vlan 74
 name Administrativos-IQ
+exit
+interface vlan 74
+ip address 192.168.47.65 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.94
+!
+!VLAN 9: AdminTI
 vlan 9
 name AdminTI
+exit
+interface vlan 9
+ip address 192.168.43.5 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.254
 !
 !Configuración de interfaces para VLAN 71 (Laboratorios)
 interface range fa0/1-8
@@ -31,7 +65,7 @@ switchport access vlan 71
 no shutdown
 !
 !Configuración de interfaces para VLAN 72 (Cámaras)
-interface range fa0/9-16
+interface range fa0/9-15
 switchport mode access
 switchport access vlan 72
 no shutdown
@@ -50,7 +84,7 @@ no shutdown
 !
 !Configuración de administración
 interface vlan 1
-ip address 192.168.49.36 255.255.255.224
+ip address 192.168.49.33 255.255.255.224
 no shutdown
 !
 !Guardar configuración

@@ -13,16 +13,50 @@ password cisco
 login
 !
 !Configuración de VLANs
+!VLAN 61: Salas-B
 vlan 61
 name Salas-B
+exit
+interface vlan 61
+ip address 192.168.40.3 255.255.255.0
+no shutdown
+ip default-gateway 192.168.40.254
+!
+!VLAN 62: Cámaras-B
 vlan 62
 name Camaras-B
+exit
+interface vlan 62
+ip address 192.168.45.195 255.255.255.192
+no shutdown
+ip default-gateway 192.168.45.254
+!
+!VLAN 63: Jefatura-B
 vlan 63
 name Jefatura-B
+exit
+interface vlan 63
+ip address 192.168.48.35 255.255.255.224
+no shutdown
+ip default-gateway 192.168.48.62
+!
+!VLAN 64: Administrativos-B
 vlan 64
 name Administrativos-B
+exit
+interface vlan 64
+ip address 192.168.47.35 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.62
+!
+!VLAN 9: AdminTI
 vlan 9
 name AdminTI
+exit
+interface vlan 9
+ip address 192.168.49.3 255.255.255.224
+no shutdown
+ip default-gateway 192.168.49.30
 !
 !Configuración de interfaces para VLAN 61 (Salas)
 interface range fa0/1-8

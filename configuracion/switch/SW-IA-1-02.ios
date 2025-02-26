@@ -13,16 +13,50 @@ password cisco
 login
 !
 !Configuración de VLANs
+!VLAN 31: Laboratorios-IA
 vlan 31
 name Laboratorios-IA
+exit
+interface vlan 31
+ip address 192.168.37.2 255.255.255.0
+no shutdown
+ip default-gateway 192.168.37.254
+!
+!VLAN 32: Cámaras-IA
 vlan 32
 name Camaras-IA
+exit
+interface vlan 32
+ip address 192.168.45.2 255.255.255.192
+no shutdown
+ip default-gateway 192.168.45.62
+!
+!VLAN 33: Jefatura-IA
 vlan 33
 name Jefatura-IA
+exit
+interface vlan 33
+ip address 192.168.47.194 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.222
+!
+!VLAN 34: Administrativos-IA
 vlan 34
 name Administrativos-IA
+exit
+interface vlan 34
+ip address 192.168.46.194 255.255.255.224
+no shutdown
+ip default-gateway 192.168.46.222
+!
+!VLAN 9: AdminTI
 vlan 9
 name AdminTI
+exit
+interface vlan 9
+ip address 192.168.43.18 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.254
 !
 !Configuración de interfaces para VLAN 31 (Laboratorios)
 interface range fa0/1-8
