@@ -1,0 +1,66 @@
+!CONFIGURACION DE SW-EC-02-01
+!nomenclatura sw-edificio-piso-dispositivo
+
+enable
+configure terminal
+hostname SW-EC-02-01
+enable secret class
+banner motd #Authorized access only, please contact your TI specialist#
+service password-encryption
+ip address 192.168.43.3
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+exit
+
+!VLAN 5: tecnicos
+vlan 5
+name tecnicos
+exit
+interface vlan 5
+ip address 192.168.47.129 255.255.255.224
+no shutdown
+ip default-gateway 192.168.47.159
+interface range f0/1-8
+switchport mode access
+switchport access vlan 5
+no shutdown
+exit
+
+!VLAN 7: servidores
+vlan 7
+name servidores
+exit
+interface vlan 7
+ip address 192.168.44.129 255.255.255.192
+no shutdown
+ip default-gateway 192.168.44.191
+interface range f0/9-15
+switchport mode access
+switchport access vlan 7
+no shutdown
+exit
+
+!VLAN 9: Admin-ti
+vlan 9
+name admin-ti
+exit
+interface vlan 9
+ip address 192.168.43.1 255.255.255.0
+no shutdown
+ip default-gateway 192.168.43.255
+interface range f0/16-24
+switchport mode access
+switchport access vlan 9
+no shutdown
+
+!CONFIGURACION DE LAS INTERFACES TRONCALES
+interface range g0/1-2
+switchport mode trunk
+no shutdown
+
+copy running-config startup-config
+end
