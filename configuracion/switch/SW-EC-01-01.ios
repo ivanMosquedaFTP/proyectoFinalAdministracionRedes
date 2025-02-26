@@ -7,7 +7,6 @@ hostname SW-EC-01-01
 enable secret class
 banner motd #Authorized access only, please contact your TI specialist#
 service password-encryption
-ip address 192.168.43.5
 line console 0
 password cisco
 login
