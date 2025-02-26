@@ -63,5 +63,10 @@ ip address 192.168.43.1 255.255.255.0
 no shutdown
 ip default-gateway 192.168.43.255
 
+!CONFIGURACION DE LAS INTERFACES TRONCALES
+interface range g0/1-2
+switchport mode trunk
+no shutdown
+
 copy running-config startup-config
 exit
