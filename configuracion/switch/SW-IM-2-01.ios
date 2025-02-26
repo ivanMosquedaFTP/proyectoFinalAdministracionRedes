@@ -1,0 +1,58 @@
+!CONFIGURACION DE SW-IM-2-01
+enable
+configure terminal
+hostname SW-IM-2-01
+enable secret class
+banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE INGENIERIA MECANICA#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+!
+!Configuración de VLANs
+vlan 51
+name Laboratorios-IM
+vlan 52
+name Camaras-IM
+vlan 53
+name Jefatura-IM
+vlan 54
+name Administrativos-IM
+vlan 9
+name AdminTI
+!
+!Configuración de interfaces para VLAN 51 (Laboratorios)
+interface range fa0/1-8
+switchport mode access
+switchport access vlan 51
+no shutdown
+!
+!Configuración de interfaces para VLAN 52 (Cámaras)
+interface range fa0/9-16
+switchport mode access
+switchport access vlan 52
+no shutdown
+!
+!Configuración de interfaces para VLAN 53 (Jefatura)
+interface range fa0/16-24
+switchport mode access
+switchport access vlan 53
+no shutdown
+!
+!Configuración de puertos trunk
+interface range gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 51,52,53,54,9
+no shutdown
+!
+!Configuración de administración
+interface vlan 1
+ip address 192.168.48.227 255.255.255.224
+no shutdown
+!
+!Guardar configuración
+copy running-config startup-config
+exit
