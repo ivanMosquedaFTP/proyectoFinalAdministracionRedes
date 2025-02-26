@@ -3,7 +3,7 @@
 
 enable
 configure terminal
-hostname EC-TI-SW1
+hostname SW-EC-01-01
 enable secret class
 banner motd #Authorized access only, please contact your TI specialist#
 service password-encryption
