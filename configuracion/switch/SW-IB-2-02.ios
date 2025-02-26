@@ -1,0 +1,58 @@
+!CONFIGURACION DE SW-IB-2-02
+enable
+configure terminal
+hostname SW-IB-2-02
+enable secret class
+banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE INGENIERIA BIOMEDICA#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+!
+!Configuración de VLANs
+vlan 41
+name Laboratorios-IB
+vlan 42
+name Camaras-IB
+vlan 43
+name Jefatura-IB
+vlan 44
+name Administrativos-IB
+vlan 9
+name AdminTI
+!
+!Configuración de interfaces para VLAN 41 (Laboratorios)
+interface range fa0/1-8
+switchport mode access
+switchport access vlan 41
+no shutdown
+!
+!Configuración de interfaces para VLAN 42 (Cámaras)
+interface range fa0/9-16
+switchport mode access
+switchport access vlan 42
+no shutdown
+!
+!Configuración de interfaces para VLAN 43 (Jefatura)
+interface range fa0/16-24
+switchport mode access
+switchport access vlan 43
+no shutdown
+!
+!Configuración de puertos trunk
+interface range gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 41,42,43,44,9
+no shutdown
+!
+!Configuración de administración
+interface vlan 1
+ip address 192.168.48.196 255.255.255.224
+no shutdown
+!
+!Guardar configuración
+copy running-config startup-config
+exit
