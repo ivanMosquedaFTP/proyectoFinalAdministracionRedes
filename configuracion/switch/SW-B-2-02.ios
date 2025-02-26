@@ -1,0 +1,58 @@
+!CONFIGURACION DE SW-B-2-02
+enable
+configure terminal
+hostname SW-B-2-02
+enable secret class
+banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE BIBLIOTECA#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+!
+!Configuración de VLANs
+vlan 61
+name Salas-B
+vlan 62
+name Camaras-B
+vlan 63
+name Jefatura-B
+vlan 64
+name Administrativos-B
+vlan 9
+name AdminTI
+!
+!Configuración de interfaces para VLAN 61 (Salas)
+interface range fa0/1-8
+switchport mode access
+switchport access vlan 61
+no shutdown
+!
+!Configuración de interfaces para VLAN 62 (Cámaras)
+interface range fa0/9-16
+switchport mode access
+switchport access vlan 62
+no shutdown
+!
+!Configuración de interfaces para VLAN 63 (Jefatura)
+interface range fa0/16-24
+switchport mode access
+switchport access vlan 63
+no shutdown
+!
+!Configuración de puertos trunk
+interface range gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 61,62,63,64,9
+no shutdown
+!
+!Configuración de administración
+interface vlan 1
+ip address 192.168.49.4 255.255.255.224
+no shutdown
+!
+!Guardar configuración
+copy running-config startup-config
+exit
