@@ -56,5 +56,10 @@ switchport mode access
 switchport access vlan 9
 no shutdown
 
+!CONFIGURACION DE LAS INTERFACES TRONCALES
+interface range g0/1-2
+switchport mode trunk
+no shutdown
+
 copy running-config startup-config
 end
