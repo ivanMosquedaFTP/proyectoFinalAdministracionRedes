@@ -1,0 +1,58 @@
+!CONFIGURACION DE SW-IS-2-02
+enable
+configure terminal
+hostname SW-IS-2-02
+enable secret class
+banner motd #ACCESO SOLO A PERSONAL AUTORIZADO DE INGENIERIA EN SISTEMAS#
+service password-encryption
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+!
+!Configuración de VLANs
+vlan 81
+name Laboratorios-IS
+vlan 82
+name Camaras-IS
+vlan 83
+name Jefatura-IS
+vlan 84
+name Administrativos-IS
+vlan 9
+name AdminTI
+!
+!Configuración de interfaces para VLAN 81 (Laboratorios)
+interface range fa0/1-8
+switchport mode access
+switchport access vlan 81
+no shutdown
+!
+!Configuración de interfaces para VLAN 82 (Cámaras)
+interface range fa0/9-16
+switchport mode access
+switchport access vlan 82
+no shutdown
+!
+!Configuración de interfaces para VLAN 83 (Jefatura)
+interface range fa0/16-24
+switchport mode access
+switchport access vlan 83
+no shutdown
+!
+!Configuración de puertos trunk
+interface range gi0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 81,82,83,84,9
+no shutdown
+!
+!Configuración de administración
+interface vlan 1
+ip address 192.168.49.68 255.255.255.224
+no shutdown
+!
+!Guardar configuración
+copy running-config startup-config
+exit
