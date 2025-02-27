@@ -274,3 +274,7 @@ interface vlan 84
  ip address 192.168.47.126 255.255.255.224
  description Gtw VLAN84.Administrativos-IS
  no shutdown
+
+exit
+
+ip routing
