@@ -8,3 +8,4 @@
   * Agregar los scripts de configuracion para cada dispositivo
   * Agregar los scripts de configuracion para los switches de distribucion
   * Agregar los scripts de configuracion para el switch de core
+  * Corregir el gateway en la configuracion de los switches, es la ultima ip de la subred
