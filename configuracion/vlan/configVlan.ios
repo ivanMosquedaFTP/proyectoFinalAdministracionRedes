@@ -1,2 +1,86 @@
+! Configuración de VLANs para todos los edificios
+! Edificio Central
 vlan 3
-name Estudihambres
+ name Administrativos
+vlan 4
+ name Directivos
+vlan 5
+ name Tecnicos
+vlan 6
+ name Estudiantes
+vlan 7
+ name Servidores
+vlan 8
+ name Profesores
+vlan 9
+ name Admin-TI
+
+! Admin-Empresas
+vlan 21
+ name Laboratorios-AE
+vlan 22
+ name Camaras-AE
+vlan 23
+ name Jefatura-AE
+vlan 24
+ name Administrativos-AE
+
+! Ing-Ambiental
+vlan 31
+ name Laboratorios-IA
+vlan 32
+ name Camaras-IA
+vlan 33
+ name Jefatura-IA
+vlan 34
+ name Administrativos-IA
+
+! Ing-Biomédica
+vlan 41
+ name Laboratorios-IB
+vlan 42
+ name Camaras-IB
+vlan 43
+ name Jefatura-IB
+vlan 44
+ name Administrativos-IB
+
+! Ing-Mecánica
+vlan 51
+ name Laboratorios-IM
+vlan 52
+ name Camaras-IM
+vlan 53
+ name Jefatura-IM
+vlan 54
+ name Administrativos-IM
+
+! Biblioteca
+vlan 61
+ name Salas-B
+vlan 62
+ name Camaras-B
+vlan 63
+ name Jefatura-B
+vlan 64
+ name Administrativos-B
+
+! Ing-Química
+vlan 71
+ name Laboratorios-IQ
+vlan 72
+ name Camaras-IQ
+vlan 73
+ name Jefatura-IQ
+vlan 74
+ name Administrativos-IQ
+
+! Ing-Sistemas
+vlan 81
+ name Laboratorios-IS
+vlan 82
+ name Camaras-IS
+vlan 83
+ name Jefatura-IS
+vlan 84
+ name Administrativos-IS
