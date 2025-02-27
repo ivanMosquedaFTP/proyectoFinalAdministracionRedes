@@ -1,0 +1,200 @@
+!configuracion switch core
+!
+!configuracion basica
+enable
+configure terminal
+hostname CS-edificio-piso-01
+enable secret class
+banner motd #seguir la convencion aqui#
+line console 0
+password cisco
+login
+line vty 0 15
+password cisco
+login
+service password-encryption
+
+!configuracion de vlans
+vlan 3
+name administrativos
+vlan 4
+name directivos
+vlan 5
+name tecnicos
+vlan 6
+name estudiantes
+vlan 7
+name servidores
+vlan 8
+name profesores
+vlan 9
+name admin-ti
+vlan 21
+name laboratorios-ae
+vlan 22
+name camaras-ae
+vlan 23
+name jefatura-ae
+vlan 24
+name administrativos-ae
+
+vlan 31
+name laboratorios-ii
+vlan 32
+name camaras-ii
+vlan 33
+name jefatura-ii
+vlan 34
+name administrativos-ii
+
+vlan 41
+name laboratorios-ib
+vlan 42
+name camaras-ib
+vlan 43
+name jefatura-ib
+vlan 44
+name administrativos-ib
+
+vlan 51
+name laboratorios-im
+vlan 52
+name camaras-im
+vlan 53
+name jefatura-im
+vlan 54
+name administrativos-im
+
+vlan 61
+name salas-b
+vlan 62
+name camaras-b
+vlan 63
+name jefatura-b
+vlan 64
+name administrativos-b
+
+vlan 71
+name laboratorios-iq
+vlan 72
+name camaras-iq
+vlan 73
+name jefatura-iq
+vlan 74
+name administrativos-iq
+
+vlan 81
+name laboratorios-is
+vlan 82
+name camaras-is
+vlan 83
+name jefatura-is
+vlan 84
+name administrativos-is
+
+!configuracion de interfaces troncales
+interface range g1/0/1-24
+switchport mode trunk
+!switchport native vlan 11 TODO: definir la vlan
+
+!configuracion de las svi(gateway)
+interface vlan 3
+ip address 192.168.44.126 255.255.255.128
+description gateway vlan 3
+no shutdown
+
+interface vlan 4
+ip address 192.168.46.158 255.255.255.224
+description gateway vlan 4
+no shutdown
+
+interface vlan 5
+ip address 192.168.47.158 255.255.255.224
+description gateway vlan 5
+no shutdown
+
+interface vlan 6
+ip address 192.168.31.254 255.255.224.0
+description gateway vlan 5
+no shutdown
+
+interface vlan 7
+ip address 192.168.44.190 255.255.255.192
+description gateway vlan 7
+no shutdown
+
+interface vlan 8
+ip address 192.168.35.254 255.255.255.128
+description gateway vlan 8
+no shutdown
+
+interface vlan 9
+ip address 192.168.43.254 255.255.255.0
+description gateway vlan 9
+no shutdown
+
+interface vlan 21
+ip address 192.168.36.254 255.255.255.0
+description gateway vlan 21
+no shutdown
+
+interface vlan 22
+ip address 192.168.44.254 255.255.255.192
+description gateway vlan 22
+no shutdown
+
+interface vlan 23
+ip address 192.168.47.190 255.255.255.224
+description gateway vlan 23
+no shutdown
+
+interface vlan 24
+ip address 192.168.46.190 255.255.255.224
+description gateway vlan 24
+no shutdown
+
+interface vlan 31
+ip address 192.168.37.254 255.255.255.0
+description gateway vlan 24
+no shutdown
+
+interface vlan 32
+ip address 192.168.45.62 255.255.255.192
+description gateway vlan 24
+no shutdown
+
+interface vlan 33
+ip address 192.168.47.222 255.255.255.192
+description gateway vlan 24
+no shutdown
+
+interface vlan 34
+ip address 192.168.46.222 255.255.255.224
+description gateway vlan 24
+no shutdown
+
+incomplete:
+interface vlan 41
+ip address 192.168.38.222 255.255.255.224
+description gateway vlan 24
+no shutdown
+
+interface vlan 42
+ip address 192.168.45.126 255.255.255.192
+description gateway vlan 24
+no shutdown
+
+interface vlan 43
+ip address 192.168.47.254 255.255.255.224
+description gateway vlan 24
+no shutdown
+
+interface vlan 44
+ip address 192.168.46.254 255.255.255.224
+description gateway vlan 24
+no shutdown
+
+interface vlan 51
+ip address 192.168.39.254 255.255.255.0
+description gateway vlan 24
+no shutdown
