@@ -102,175 +102,175 @@ switchport mode trunk
 !Configuracion de SVI (Gateway)
 interface vlan 3
  ip address 192.168.44.126 255.255.255.128
- description Gtw VLAN3
+ description Gtw VLAN3.Administrativos
  no shutdown
 
 interface vlan 4
  ip address 192.168.46.158 255.255.255.224
- description Gtw VLAN4
+ description Gtw VLAN4.Directivos
  no shutdown
 
 interface vlan 5
  ip address 192.168.47.158 255.255.255.224
- description Gtw VLAN5
+ description Gtw VLAN5.Tecnicos
  no shutdown
 
 interface vlan 6
  ip address 192.168.31.254 255.255.224.0
- description Gtw VLAN6
+ description Gtw VLAN6.Estudiantes
  no shutdown
 
 interface vlan 7
  ip address 192.168.44.190 255.255.255.192
- description Gtw VLAN7
+ description Gtw VLAN7.Servidores
  no shutdown
 
 interface vlan 8
  ip address 192.168.35.254 255.255.252.0
- description Gtw VLAN8
+ description Gtw VLAN8.Profesores
  no shutdown
 
 interface vlan 9
  ip address 192.168.43.254 255.255.255.0
- description Gtw VLAN9
+ description Gtw VLAN9.Admin-TI
  no shutdown
 
 interface vlan 21
  ip address 192.168.36.254 255.255.255.0
- description Gtw VLAN21
+ description Gtw VLAN21.Laboratorios-AE
  no shutdown
 
 interface vlan 22
  ip address 192.168.44.254 255.255.255.192
- description Gtw VLAN22
+ description Gtw VLAN22.Camaras-AE
  no shutdown
 
 interface vlan 23
  ip address 192.168.47.190 255.255.255.224
- description Gtw VLAN23
+ description Gtw VLAN23.Jefatura-AE
  no shutdown
 
 interface vlan 24
  ip address 192.168.46.190 255.255.255.224
- description Gtw VLAN24
+ description Gtw VLAN24.Administrativos-AE
  no shutdown
 
 interface vlan 31
  ip address 192.168.37.254 255.255.255.0
- description Gtw VLAN31
+ description Gtw VLAN31.Laboratorios-IA
  no shutdown
 
 interface vlan 32
  ip address 192.168.45.62 255.255.255.192
- description Gtw VLAN32
+ description Gtw VLAN32.Camaras-IA
  no shutdown
 
 interface vlan 33
  ip address 192.168.47.222 255.255.255.224
- description Gtw VLAN33
+ description Gtw VLAN33.Jefatura-IA
  no shutdown
 
 interface vlan 34
  ip address 192.168.46.222 255.255.255.224
- description Gtw VLAN34
+ description Gtw VLAN34.Administrativos-IA
  no shutdown
 
 interface vlan 41
  ip address 192.168.38.254 255.255.255.0
- description Gtw VLAN41
+ description Gtw VLAN41.Laboratorios-IB
  no shutdown
 
 interface vlan 42
  ip address 192.168.45.126 255.255.255.192
- description Gtw VLAN42
+ description Gtw VLAN42.Camaras-IB
  no shutdown
 
 interface vlan 43
  ip address 192.168.47.254 255.255.255.224
- description Gtw VLAN43
+ description Gtw VLAN43.Jefatura-IB
  no shutdown
 
 interface vlan 44
  ip address 192.168.46.254 255.255.255.224
- description Gtw VLAN44
+ description Gtw VLAN44.Administrativos-IB
  no shutdown
 
 interface vlan 51
  ip address 192.168.39.254 255.255.255.0
- description Gtw VLAN51
+ description Gtw VLAN51.Laboratorios-IM
  no shutdown
 
 interface vlan 52
  ip address 192.168.45.190 255.255.255.192
- description Gtw VLAN52
+ description Gtw VLAN52.Camaras-IM
  no shutdown
 
 interface vlan 53
  ip address 192.168.48.30 255.255.255.224
- description Gtw VLAN53
+ description Gtw VLAN53.Jefatura-IM
  no shutdown
 
 interface vlan 54
  ip address 192.168.47.30 255.255.255.224
- description Gtw VLAN54
+ description Gtw VLAN54.Administrativos-IM
  no shutdown
 
 interface vlan 61
  ip address 192.168.40.254 255.255.255.0
- description Gtw VLAN61
+ description Gtw VLAN61.Salas-B
  no shutdown
 
 interface vlan 62
  ip address 192.168.45.254 255.255.255.192
- description Gtw VLAN62
+ description Gtw VLAN62.Camaras-B
  no shutdown
 
 interface vlan 63
  ip address 192.168.48.62 255.255.255.224
- description Gtw VLAN63
+ description Gtw VLAN63.Jefatura-B
  no shutdown
 
 interface vlan 64
  ip address 192.168.47.62 255.255.255.224
- description Gtw VLAN64
+ description Gtw VLAN64.Administrativos-B
  no shutdown
 
 interface vlan 71
  ip address 192.168.41.254 255.255.255.0
- description Gtw VLAN71
+ description Gtw VLAN71.Laboratorios-IQ
  no shutdown
 
 interface vlan 72
  ip address 192.168.46.62 255.255.255.192
- description Gtw VLAN72
+ description Gtw VLAN72.Camaras-IQ
  no shutdown
 
 interface vlan 73
  ip address 192.168.48.94 255.255.255.224
- description Gtw VLAN73
+ description Gtw VLAN73.Jefatura-IQ
  no shutdown
 
 interface vlan 74
  ip address 192.168.47.94 255.255.255.224
- description Gtw VLAN74
+ description Gtw VLAN74.Administrativos-IQ
  no shutdown
 
 interface vlan 81
  ip address 192.168.42.254 255.255.255.0
- description Gtw VLAN81
+ description Gtw VLAN81.Laboratorios-IS
  no shutdown
 
 interface vlan 82
  ip address 192.168.46.126 255.255.255.192
- description Gtw VLAN82
+ description Gtw VLAN82.Camaras-IS
  no shutdown
 
 interface vlan 83
  ip address 192.168.48.126 255.255.255.224
- description Gtw VLAN83
+ description Gtw VLAN83.Jefatura-IS
  no shutdown
 
 interface vlan 84
  ip address 192.168.47.126 255.255.255.224
- description Gtw VLAN84
+ description Gtw VLAN84.Administrativos-IS
  no shutdown
