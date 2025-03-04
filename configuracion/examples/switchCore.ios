@@ -3,7 +3,7 @@
 !Configuracion basica
 enable
 conf t
-hostname SC-EC-3-01
+hostname SWC
 enable secret class
 banner motd "Solo acceso autorizado"
 service password-encryption

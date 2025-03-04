@@ -4,6 +4,7 @@ switchport mode trunk
 !switchport native vlan 11 pendiente
 
 interface vlan 9
+!la ip de vlan 9 debe ser distinta a las demás, empezando de .254 hacia abajo por cada edificio
 ip address 192.168.43.253 255.255.255.0
 no shutdown
 
