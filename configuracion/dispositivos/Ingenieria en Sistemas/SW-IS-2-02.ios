@@ -82,6 +82,6 @@ switchport mode trunk
 switchport trunk allowed vlan 81,82,83,84,9
 no shutdown
 !
+end
 !Guardar configuración
 copy running-config startup-config
-exit

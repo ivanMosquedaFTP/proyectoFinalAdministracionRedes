@@ -81,6 +81,6 @@ interface range gi0/1-2
 switchport mode trunk
 switchport trunk allowed vlan 41,42,43,44,9
 no shutdown
+end
 !Guardar configuración
 copy running-config startup-config
-exit
