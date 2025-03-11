@@ -9,6 +9,7 @@
 !               max 1024
 
 !DESDE CORE
+!configurar todas las vlans que requieran DHCP habilitado en su subred
 conf t
 int vlan 6
 !direccion ip del servidor DHCP
