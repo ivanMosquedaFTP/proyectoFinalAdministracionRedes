@@ -1,3 +1,8 @@
+!PARA TODOS LOS SWITCHES FUNCIONA SOLO DEBEMOS CAMBIAR LA DIRECCIÓN IP DE LA VLAN 9 DE FORMA DESCENDENTE
+!
+enable
+configure terminal
+
 !configuracion de svi
 interface range g1/0/1-24
 switchport mode trunk
