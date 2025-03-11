@@ -84,4 +84,4 @@ no shutdown
 end
 !Guardar configuración
 copy running-config startup-config
-exit
+
