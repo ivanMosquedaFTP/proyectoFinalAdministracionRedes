@@ -60,6 +60,6 @@ no shutdown
 interface range g0/1-2
 switchport mode trunk
 no shutdown
+end
 
 copy running-config startup-config
-end
