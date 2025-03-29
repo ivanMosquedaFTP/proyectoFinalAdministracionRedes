@@ -36,6 +36,8 @@ network 200.23.53.144 0.0.0.15 area 0
 network 200.23.53.160 0.0.0.3 area 0
 
 !DESDE CORE
+!
+cisco
 enable
 class
 configure terminal
